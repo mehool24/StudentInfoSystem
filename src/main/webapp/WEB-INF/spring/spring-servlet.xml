@@ -11,6 +11,7 @@
 		base-package="com.vastika.smd.controller" />
 
 	<mvc:annotation-driven />
+	<mvc:resources location="/resources/" mapping="/resources/**" />
 
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
