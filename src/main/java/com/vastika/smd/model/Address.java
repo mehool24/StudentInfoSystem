@@ -1,10 +1,12 @@
 package com.vastika.smd.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -24,6 +26,16 @@ public class Address {
 	private int zipCode;
 	@Column(name = "country_name")
 	private String countryName;
+	@OneToOne
+	private CollegeInfo collegeInfo;
+
+	public CollegeInfo getCollegeInfo() {
+		return collegeInfo;
+	}
+
+	public void setCollegeInfo(CollegeInfo collegeInfo) {
+		this.collegeInfo = collegeInfo;
+	}
 
 	public int getId() {
 		return id;
