@@ -9,14 +9,13 @@
 	src="resources/bootstrap/js/bootstrap.min.js"></script>
 	
 <nav class="navbar navbar-expand-lg   navbar-dark bg-success">
-  <a class="navbar-brand" href="home">Home <span class="sr-only">(current)</span></a>
  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-       <a class="navbar-brand" href="student_list">StudentInfoSystem</a>
+       <a class="navbar-brand" href="home">tEam1 Consulting</a>
       </li>
-      <li class="nav-item active">
-        <a class="navbar-brand" href="student_list">CollegeInformation</a>
+       <li class="nav-item active">
+       <a class="navbar-brand" href="home">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle ml-auto" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
@@ -33,6 +32,9 @@
         	</c:otherwise>
         </c:choose>
         </div>
+      </li>
+      <li class="nav-item active">
+        <a class="navbar-brand" href="add_student">Add Student</a>
       </li>
       </ul>
     
