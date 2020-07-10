@@ -53,6 +53,8 @@ public class Student {
 	public void setCollegeInfo(CollegeInfo collegeInfo) {
 		this.collegeInfo = collegeInfo;
 	}
+	@OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
+	private Address address;
 
 	public int getId() {
 		return id;
@@ -117,6 +119,13 @@ public class Student {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	
 
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	
 }
