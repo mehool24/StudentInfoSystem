@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -12,18 +14,21 @@ import javax.persistence.Table;
 public class Address {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	@Column(name = "street_name")
 	private String streetName;
 	@Column(name = "city_name")
 	private String cityName;
-	@Column(name = "sate_name")
+	@Column(name = "state_name")
 	private String stateName;
 	@Column(name = "zip_code")
 	private int zipCode;
 	@Column(name = "country_name")
 	private String countryName;
+	
+	@OneToOne
+	@MapsId
+	private Student student;
 
 	public int getId() {
 		return id;
@@ -73,4 +78,13 @@ public class Address {
 		this.countryName = countryName;
 	}
 
+	public Student getStudent() {
+		return student;
+	}
+
+	public void setStudent(Student student) {
+		this.student = student;
+	}
+
+	
 }
