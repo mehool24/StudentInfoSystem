@@ -1,5 +1,6 @@
 package com.vastika.smd.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,6 +26,16 @@ public class Address {
 	private int zipCode;
 	@Column(name = "country_name")
 	private String countryName;
+	@OneToOne
+	private CollegeInfo collegeInfo;
+
+	public CollegeInfo getCollegeInfo() {
+		return collegeInfo;
+	}
+
+	public void setCollegeInfo(CollegeInfo collegeInfo) {
+		this.collegeInfo = collegeInfo;
+	}
 	
 	@OneToOne
 	@MapsId

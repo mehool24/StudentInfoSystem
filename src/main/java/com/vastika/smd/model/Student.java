@@ -1,6 +1,7 @@
 package com.vastika.smd.model;
 
 import java.util.Date;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -8,9 +9,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import org.springframework.format.annotation.DateTimeFormat;
+
 
 @Entity
 @Table(name = "student")
@@ -30,7 +33,26 @@ public class Student {
 	private Date dob;
 	private int ssn;
 	private String gender;
-	
+	@OneToMany(mappedBy = "student")
+	private Set<Course> courses;
+	@OneToOne(cascade = CascadeType.ALL)
+	private CollegeInfo collegeInfo;
+
+	public Set<Course> getCourses() {
+		return courses;
+	}
+
+	public void setCourses(Set<Course> courses) {
+		this.courses = courses;
+	}
+
+	public CollegeInfo getCollegeInfo() {
+		return collegeInfo;
+	}
+
+	public void setCollegeInfo(CollegeInfo collegeInfo) {
+		this.collegeInfo = collegeInfo;
+	}
 	@OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
 	private Address address;
 
