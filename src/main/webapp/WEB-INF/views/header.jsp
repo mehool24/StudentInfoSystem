@@ -18,7 +18,7 @@
       <li class="nav-item active">
         <a class="navbar-brand" href="student_list">CollegeInformation</a>
       </li>
-      <li class="nav-item dropdown">
+      <li class="nav-item dropdown" align="right">
         <a class="nav-link dropdown-toggle ml-auto" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
         ${uname}
         </a>
@@ -29,6 +29,7 @@
         	</c:when>
         	<c:otherwise>
         		<a class="dropdown-item" href="student_details">Student Details</a>
+        		<a class="dropdown-item" href="manage_students">Manage Students</a>
         		<a class="dropdown-item" href="logout">logout</a>
         	</c:otherwise>
         </c:choose>
