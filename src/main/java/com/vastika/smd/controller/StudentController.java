@@ -14,9 +14,9 @@ public class StudentController {
 	@Autowired
 	private StudentService studentService;
 	
-	@RequestMapping(value = {"/student_list" }, method = RequestMethod.GET)
+	@RequestMapping(value = {"/manage_students" }, method = RequestMethod.GET)
 	public String getAllStudentInfo(Model model) {
-		model.addAttribute("users",studentService .getAllStudentInfo());
+		model.addAttribute("students", studentService.getAllStudentInfo());
 		return "studentList";
 	}
 

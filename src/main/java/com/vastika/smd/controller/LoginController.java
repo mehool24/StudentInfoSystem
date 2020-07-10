@@ -29,6 +29,7 @@ public class LoginController {
 		Student student = studentService.getStudentByUserNameAndpassword(username, password);
 		if (student != null) {
 			session.setAttribute("uname", username);
+			session.setAttribute("student", student);
 			return "redirect:/home";
 		}
 		model.addAttribute("msg", "Wrong username or password!!!");
@@ -41,5 +42,12 @@ public class LoginController {
 		session.invalidate();
 		model.addAttribute("msg", "You are successfully logged out!!!");
 		return "redirect:/home";
+	}
+	
+	@GetMapping("/student_details")
+	public String getStudentDetails(Model model, HttpSession session) {
+		Student sessionStudent = (Student)session.getAttribute("student");
+		model.addAttribute("student", sessionStudent);
+		return "studentDetails";
 	}
 }

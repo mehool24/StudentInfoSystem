@@ -19,11 +19,12 @@ public class StudentRepositoryImpl implements StudentRepository {
 	@Autowired
 	private SessionFactory sessionFactory;
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Student> getAllStudentInfo() {
 		Session session = HibernateUtil.getSession(sessionFactory);
 		Criteria criteria = session.createCriteria(Student.class);
-		return criteria.list();
+		return (List<Student>) criteria.list();
 	}
 
 	@Override
