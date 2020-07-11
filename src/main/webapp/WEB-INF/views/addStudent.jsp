@@ -132,6 +132,7 @@
 			<button class="btn btn-success btn-md" type="submit">Save Student</button>
 		</div>
 	</form>
+	<a href="manage_students"><button class="btn btn-primary btn-sm margin-all-side">Cancel</button></a>
 </div>
 </body>
 </html>

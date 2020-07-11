@@ -30,6 +30,7 @@
         	</c:when>
         	<c:otherwise>
         		<a class="dropdown-item" href="student_details">Student Details</a>
+        		<a class="dropdown-item" href="manage_students">Manage Students</a>
         		<a class="dropdown-item" href="logout">logout</a>
         	</c:otherwise>
         </c:choose>
