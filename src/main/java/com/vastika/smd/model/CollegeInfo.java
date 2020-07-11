@@ -17,10 +17,13 @@ public class CollegeInfo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+	
 	@Column(name = "college_name")
 	private String collegeName;
+	
 	@OneToOne(cascade = CascadeType.ALL)
 	private Address address;
+	
 	@OneToOne
 	private Student student;
 	

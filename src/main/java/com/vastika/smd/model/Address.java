@@ -15,6 +15,7 @@ import javax.persistence.Table;
 public class Address {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	@Column(name = "street_name")
 	private String streetName;
@@ -26,6 +27,7 @@ public class Address {
 	private int zipCode;
 	@Column(name = "country_name")
 	private String countryName;
+	
 	@OneToOne
 	private CollegeInfo collegeInfo;
 
@@ -38,7 +40,6 @@ public class Address {
 	}
 	
 	@OneToOne
-	@MapsId
 	private Student student;
 
 	public int getId() {

@@ -10,44 +10,46 @@
 
 </head>
 <body>
-<div><a href ="add_user">Add Student</a></div>
-<div><h1>Student List</h1></div>
-	<c:if test="${!empty students }"></c:if>
-	<table class=" table table-striped">
+<div class="container">
+<a href="add_student"><button class="btn btn-primary btn-sm margin-all-side">Add Student</button></a>
+	<table class="table table-striped">
 		<thead>
 			<tr>
-				<th>SN</th>
-				<th>ID</th>
-				<th>First Name</th>
-				<th>Last Name</th>
-				<th>User Name</th>
+				<th>S. No.</th>
+				<th>Student Id</th>
+				<th>Studen Name</th>
+				<th>Username</th>
 				<th>Password</th>
-				<th>Date Of Birth</th>
-				<th>SSN</th>
-				<td>Gender</td>
-				<th>Actions</th>
-				
+				<th>DOB</th>
+				<th>Social Security</th>
+				<th>Gender</th>
+				<th>Studen Addredd</th>
+				<th>College Name</th>
+				<th>College Address</th>
+				<th>Courses</th>
+				<th>Acction</th>
+				<th>
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="${students}" var="student" varStatus="i">
-				<tr>
-					<td>${i.count}</td>
-					<td>${student.id}</td>
-					<td>${student.firstName}</td>
-					<td>${student.lastName}</td>
-					<td>${student.userName}</td>
-					<td>${student.password}</td>
-					<td>${student.dob}</td>
-					<td>${student.ssn}</td>
-					<td>${student.gender}</td>
-					
-					<td><a href ="edit_user?=${student.id}">Edit</a> 
-					<a href ="delete_user?id=${student.id}">Delete</a></td>
-				</tr>
-			</c:forEach>
-
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				
+			</tr>
 		</tbody>
 	</table>
+</div>
 </body>
 </html>

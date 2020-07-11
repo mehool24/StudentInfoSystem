@@ -19,12 +19,11 @@ public class StudentRepositoryImpl implements StudentRepository {
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public List<Student> getAllStudentInfo() {
 		Session session = HibernateUtil.getSession(sessionFactory);
 		Criteria criteria = session.createCriteria(Student.class);
-		return (List<Student>) criteria.list();
+		return criteria.list();
 	}
 
 	@Override
@@ -38,5 +37,12 @@ public class StudentRepositoryImpl implements StudentRepository {
 	@Override
 	public void resetPassword(Student student) {
 
+	}
+
+	@Override
+	public void saveStudent(Student student) {
+		Session session = HibernateUtil.getSession(sessionFactory);
+		session.save(student);
+		
 	}
 }
