@@ -12,4 +12,6 @@ public interface StudentService {
 
 	void resetPassword(Student student);
 
+	void saveStudent(Student student);
+	
 }

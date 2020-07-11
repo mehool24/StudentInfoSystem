@@ -39,4 +39,11 @@ public class StudentRepositoryImpl implements StudentRepository {
 	public void resetPassword(Student student) {
 
 	}
+
+	@Override
+	public void saveStudent(Student student) {
+		Session session = HibernateUtil.getSession(sessionFactory);
+		session.save(student);
+		
+	}
 }

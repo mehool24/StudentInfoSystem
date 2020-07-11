@@ -26,6 +26,7 @@ public class Address {
 	private int zipCode;
 	@Column(name = "country_name")
 	private String countryName;
+	
 	@OneToOne
 	private CollegeInfo collegeInfo;
 

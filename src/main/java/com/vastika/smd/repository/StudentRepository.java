@@ -11,4 +11,6 @@ public interface StudentRepository {
 	Student getStudentByUserNameAndpassword(String username, String password);
 
 	void resetPassword(Student student);
+	
+	void saveStudent(Student student);
 }

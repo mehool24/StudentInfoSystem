@@ -4,6 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
 <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="resources/style.css" />
 <script type="text/javascript" src="resources/jquery.js"></script>
 <script type="text/javascript"
 	src="resources/bootstrap/js/bootstrap.min.js"></script>
@@ -18,7 +19,7 @@
       <li class="nav-item active">
         <a class="navbar-brand" href="student_list">CollegeInformation</a>
       </li>
-      <li class="nav-item dropdown" align="right">
+      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle ml-auto" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
         ${uname}
         </a>
