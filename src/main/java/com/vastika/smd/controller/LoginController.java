@@ -28,7 +28,7 @@ public class LoginController {
 	public String login(@RequestParam("userName") String username, String password, HttpSession session, Model model) {
 		Student student = studentService.getStudentByUserNameAndpassword(username, password);
 		if (student != null) {
-			session.setAttribute("uname", username);
+			session.setAttribute("name", student.getFirstName() + " " + student.getLastName());
 			session.setAttribute("student", student);
 			return "redirect:/home";
 		}
@@ -41,7 +41,7 @@ public class LoginController {
 	public String getLoginForm(Model model, HttpSession session) {
 		session.invalidate();
 		model.addAttribute("msg", "You are successfully logged out!!!");
-		return "redirect:/home";
+		return "login";
 	}
 	
 	@GetMapping("/student_details")

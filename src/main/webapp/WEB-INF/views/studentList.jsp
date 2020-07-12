@@ -21,16 +21,16 @@
 				<th>Student Id</th>
 				<th>First Name</th>
 				<th>Last Name</th>
-				<th>Username</th>
+				<th>User Name</th>
 				<th>Password</th>
 				<th>Date Of Birth</th>
 				<th>Social Security</th>
 				<th>Gender</th>
-				<th>Studen Addredd</th>
+				<th>Student Address</th>
 				<th>College Name</th>
 				<th>College Address</th>
 				<th>Courses</th>
-				<th>Acction</th>
+				<th>Action</th>
 				<th>				
 			</tr>
 		</thead>
@@ -46,7 +46,7 @@
 					<td>${student.dob}</td>
 					<td>${student.ssn}</td>
 					<td>${student.gender}</td>
-					<td></td>
+					<td><c:if test="${!empty student.getAddress()}">${student.getAddress().getCityName()}, ${student.getAddress().getCountryName()}</c:if></td>
 					<td></td>
 					<td></td>
 					<td></td>
