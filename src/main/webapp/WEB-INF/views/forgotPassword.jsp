@@ -2,6 +2,8 @@
 <html>
 <head>
 <title>Login Page</title>
+
+
 <!--Bootsrap 4 CDN-->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -29,7 +31,7 @@
 		<div class="d-flex justify-content-center h-100">
 			<div class="card">
 				<div class="card-header">
-					<h3 align="center" style="padding-top: 50px;">Sign In</h3>
+					<h3 align="center" style="padding-top: 50px;">Forgot Password?</h3>
 					<div class="d-flex justify-content-end social_icon">
 						<span><i class="fab fa-facebook-square"></i></span> <span><i
 							class="fab fa-google-plus-square"></i></span> <span><i
@@ -37,45 +39,43 @@
 					</div>
 				</div>
 				<div class="card-body">
-					<form  class="form-signin" action="student_login" method="post">
+					<form  class="form-signin" action="password_reset" method="post">
 					<span style =color:red;>${msg }</span>
-					<span style="color: red;"> ${message}</span>
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="text" class="form-control" placeholder="username"  name ="userName">
+							<input type="text" class="form-control" placeholder="Enter valid email"  name ="email">
 						</div>
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
 							<input type="password" class="form-control"
-								placeholder="password" name="password">
+								placeholder="new password" name="newPassword">
 						</div>
-						<div class="row align-items-center remember">
-							<input type="checkbox">Remember Me
+						
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="password" class="form-control"
+								placeholder="confirm password" name="confirmPassword">
 						</div>
-						<div class="form-group">
-							<input type="submit" value="Login"
+				
+						<div class="form-group" style="padding-top: 20px;">
+							<input type="submit" value="Update"
 								class="btn float-right login_btn">
+								
+								<a href="login" type="button"
+								class="btn float-left login_btn">Cancel</a>
 						</div>
 					</form>
 				</div>
-				<div class="card-footer">
-					<div class="d-flex justify-content-center links">
-						Don't have an account?<a href="#">Sign Up</a>
-					</div>
-					<div class="d-flex justify-content-center">
-						<a href="forgot_password">Forgot your password?</a>
-					</div>
-					<div class="d-flex justify-content-center">
-						<a href="home">Home</a>
-					</div>
-				</div>
+		
 			</div>
 		</div>
 	</div>
+
 </body>
 </html>
-
