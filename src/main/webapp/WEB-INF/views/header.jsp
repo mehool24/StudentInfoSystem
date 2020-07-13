@@ -4,7 +4,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
 <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css" />
-<link rel="stylesheet" href="resources/style.css" />
 <script type="text/javascript" src="resources/jquery.js"></script>
 <script type="text/javascript"
 	src="resources/bootstrap/js/bootstrap.min.js"></script>
@@ -18,29 +17,27 @@
        <li class="nav-item active">
        <a class="navbar-brand" href="home">Home <span class="sr-only">(current)</span></a>
       </li>
-      <c:choose>
-       	<c:when test="${empty name}">
-       		<li class="nav-item active">
-       			<a class="navbar-brand" href="login">Login</a>
-     			</li>
-       	</c:when>
-       	<c:otherwise>
-       		<li class="nav-item dropdown">
-		        <a class="nav-link dropdown-toggle ml-auto" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-		        ${name}
-		        </a>
-		        <div class="dropdown-menu"  aria-labelledby="navbarDropdown"  >
-	        		<a class="dropdown-item" href="student_details">Student Details</a>
-	        		<a class="dropdown-item" href="manage_students">Manage Students</a>
-	        		<a class="dropdown-item" href="logout">Logout</a>
-		        </div>
-		    </li>
-       	 </c:otherwise>
-       </c:choose>
-      <li class="nav-item active">
-        <a class="navbar-brand" href="add_student">Add Student</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle ml-auto" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+        ${name}
+        </a>
+        <div class="dropdown-menu"  aria-labelledby="navbarDropdown"  >
+        <c:choose>
+        	<c:when test="${empty name}">
+        		<a class="dropdown-item" href="login">login</a>
+        	</c:when>
+        	<c:otherwise>
+              	<a class="dropdown-item" href="manage_students">Manage Students</a>
+        		<a class="dropdown-item" href="logout">logout</a>
+        		<li class="nav-item active">
+        			<a class="navbar-brand" href="add_student">Add Student</a>
+        		</li>
+        	</c:otherwise>
+        </c:choose>
+        </div>
       </li>
       </ul>
+    
   </div>
 </nav>
 </div>

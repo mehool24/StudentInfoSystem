@@ -21,4 +21,8 @@ public interface StudentRepository {
 	void sendMail(SimpleMailMessage simpleMessage);
 
 	void saveStudent(Student student);
+	
+	Student getStudentById(int id);
+	
+	void deleteUserInfo(int id);
 }

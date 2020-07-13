@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -15,7 +16,9 @@ import javax.persistence.Table;
 public class Address {
 
 	@Id
-	private int id;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "address_id")
+	private int addressId;
 	@Column(name = "street_name")
 	private String streetName;
 	@Column(name = "city_name")
@@ -28,7 +31,12 @@ public class Address {
 	private String countryName;
 	
 	@OneToOne
+	@JoinColumn(name = "college_id")
 	private CollegeInfo collegeInfo;
+	
+	@OneToOne
+	@JoinColumn(name = "id")
+	private Student student;
 
 	public CollegeInfo getCollegeInfo() {
 		return collegeInfo;
@@ -37,17 +45,13 @@ public class Address {
 	public void setCollegeInfo(CollegeInfo collegeInfo) {
 		this.collegeInfo = collegeInfo;
 	}
-	
-	@OneToOne
-	@MapsId
-	private Student student;
 
-	public int getId() {
-		return id;
+	public int getAddressId() {
+		return addressId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setAddressId(int addressId) {
+		this.addressId = addressId;
 	}
 
 	public String getStreetName() {

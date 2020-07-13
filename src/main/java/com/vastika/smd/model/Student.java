@@ -1,7 +1,6 @@
 package com.vastika.smd.model;
 
 import java.util.Date;
-import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -9,9 +8,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 import org.springframework.format.annotation.DateTimeFormat;
 
 
@@ -22,6 +24,7 @@ public class Student {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+	
 	@Column(name = "first_name")
 	private String firstName;
 	@Column(name = "last_name")
@@ -31,14 +34,24 @@ public class Student {
 	private String password;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dob;
+	@Column(columnDefinition = "integer default 25")
 	private int ssn;
 	private String gender;
 	
-	@OneToMany(mappedBy = "student")
-	private Set<Course> courses;
+	@OneToOne(cascade = CascadeType.ALL)
+	private Course course;
 	
+	public Course getCourse() {
+		return course;
+	}
+
+	public void setCourse(Course course) {
+		this.course = course;
+	}
+
 	@OneToOne(cascade = CascadeType.ALL)
 	private CollegeInfo collegeInfo;
+	
 	private String email;
 
 	public String getEmail() {
@@ -49,14 +62,8 @@ public class Student {
 		this.email = email;
 	}
 
-	public Set<Course> getCourses() {
-		return courses;
-	}
-
-	public void setCourses(Set<Course> courses) {
-		this.courses = courses;
-	}
-
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "college_id")
 	public CollegeInfo getCollegeInfo() {
 		return collegeInfo;
 	}
@@ -65,7 +72,8 @@ public class Student {
 		this.collegeInfo = collegeInfo;
 	}
 	
-	@OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "address_id")
 	private Address address;
 
 	public int getId() {

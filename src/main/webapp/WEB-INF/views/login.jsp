@@ -25,7 +25,8 @@
 <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-	<div class="container">
+<div><%@ include file ="header.jsp" %>
+	<div class="container" style="padding-top: 180px;">
 		<div class="d-flex justify-content-center h-100">
 			<div class="card">
 				<div class="card-header">
@@ -58,7 +59,7 @@
 						</div>
 						<div class="form-group">
 							<input type="submit" value="Login"
-								class="btn float-right login_btn">
+								class="btn float-right login_btn btn-warning">
 						</div>
 					</form>
 				</div>
@@ -75,6 +76,7 @@
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 </body>
 </html>
