@@ -4,12 +4,18 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>College Information System</title>
+<title>tEam1 Consulting</title>
 <%@ include file ="header.jsp" %>
 </head>
 <body>
+<div class="container" style="padding-top: 40px">
+	<div class="jumbotron">
+	
 	<header>
 		<h1>Welcome to college information system home page</h1>
 	</header>
+	</div>
+</div>
+
 </body>
 </html>

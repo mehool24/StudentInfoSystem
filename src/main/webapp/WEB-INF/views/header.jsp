@@ -8,16 +8,15 @@
 <script type="text/javascript" src="resources/jquery.js"></script>
 <script type="text/javascript"
 	src="resources/bootstrap/js/bootstrap.min.js"></script>
-	
+<div class="container">
 <nav class="navbar navbar-expand-lg   navbar-dark bg-success">
- <a class="navbar-brand" href="home">Home <span class="sr-only">(current)</span></a>
  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-       <a class="navbar-brand" href="manage_students">StudentInfoSystem</a>
+       <a class="navbar-brand" href="home">tEam1 Consulting</a>
       </li>
-      <li class="nav-item active">
-        <a class="navbar-brand" href="manage_students">CollegeInformation</a>
+       <li class="nav-item active">
+       <a class="navbar-brand" href="home">Home <span class="sr-only">(current)</span></a>
       </li>
       <c:choose>
        	<c:when test="${empty name}">
@@ -38,7 +37,10 @@
 		    </li>
        	 </c:otherwise>
        </c:choose>
-     </ul>
+      <li class="nav-item active">
+        <a class="navbar-brand" href="add_student">Add Student</a>
+      </li>
+      </ul>
   </div>
 </nav>
-
+</div>

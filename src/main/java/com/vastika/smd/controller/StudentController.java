@@ -34,5 +34,10 @@ public class StudentController {
 		studentService.saveStudent(student);
 		return "studentList";
 	}
+	
+	@RequestMapping(value = "/add_student")
+	public String getAddStudentForm(Model model) {
+		return "addStudent";
+	}
 
 }

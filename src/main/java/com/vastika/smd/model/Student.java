@@ -39,6 +39,15 @@ public class Student {
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	private CollegeInfo collegeInfo;
+	private String email;
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 	public Set<Course> getCourses() {
 		return courses;

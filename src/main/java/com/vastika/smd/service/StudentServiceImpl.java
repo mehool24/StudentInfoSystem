@@ -5,6 +5,7 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Service;
 
 import com.vastika.smd.model.Student;
@@ -34,9 +35,22 @@ public class StudentServiceImpl implements StudentService {
 	}
 
 	@Override
-	public void saveStudent(Student student) {
-		studentRepository.saveStudent(student);
+	public Student getStudentByEmail(String email) {
+		return studentRepository.getStudentByEmail(email);
+	}
+
+	@Override
+	public void updateStudentInfo(Student student) {
+		studentRepository.updateStudentInfo(student);
 		
+	}
+	
+	@Override
+	public void sendMail(SimpleMailMessage simpleMessage) {
+		studentRepository.sendMail(simpleMessage);
+    
+	public void saveStudent(Student student) {
+		studentRepository.saveStudent(student);		
 	}
 
 }

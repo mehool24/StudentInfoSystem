@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,8 +6,22 @@
 <%@ include file="header.jsp" %>
 </head>
 <body>
-<div class="container" style="margin-bottom: 150px;">
-	<h2 class="margin-all-side">Add Student</h2>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add new Student</title>
+<%@ include file ="header.jsp" %>
+</head>
+<body>
+<div class="container" style="padding-top: 40px;">
+	<div class="jumbotron">
+	<header>
+		<h1>Add new student page</h1>
+	</header>
+	</div>
 	<form action="save_student" method="post">
 		<div class="form-group">
 			<div class="row">
