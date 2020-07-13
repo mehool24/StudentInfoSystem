@@ -8,8 +8,12 @@
 <%@ include file ="header.jsp" %>
 </head>
 <body>
+<div class="container" style="padding-top: 40px;">
+	<div class="jumbotron">
 	<header>
 		<h1>Add new student page</h1>
 	</header>
+	</div>
+</div>
 </body>
 </html>

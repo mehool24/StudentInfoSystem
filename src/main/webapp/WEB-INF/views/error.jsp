@@ -23,6 +23,6 @@
 			
         </div><!-- /card-container -->
     </div><!-- /container -->
-
+<%@ include file="footer.jsp" %>
 </body>
 </html>

@@ -7,7 +7,7 @@
 <script type="text/javascript" src="resources/jquery.js"></script>
 <script type="text/javascript"
 	src="resources/bootstrap/js/bootstrap.min.js"></script>
-	
+<div class="container">
 <nav class="navbar navbar-expand-lg   navbar-dark bg-success">
  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -40,4 +40,4 @@
     
   </div>
 </nav>
-
+</div>
