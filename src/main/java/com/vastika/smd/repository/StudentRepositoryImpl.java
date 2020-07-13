@@ -7,6 +7,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.stereotype.Repository;
 
 import com.vastika.smd.model.Student;
@@ -18,6 +20,9 @@ public class StudentRepositoryImpl implements StudentRepository {
 
 	@Autowired
 	private SessionFactory sessionFactory;
+	
+	@Autowired
+	private JavaMailSenderImpl mailSender;
 
 	@Override
 	public List<Student> getAllStudentInfo() {
@@ -37,5 +42,26 @@ public class StudentRepositoryImpl implements StudentRepository {
 	@Override
 	public void resetPassword(Student student) {
 
+	}
+
+	@Override
+	public Student getStudentByEmail(String email) {
+		Session session = HibernateUtil.getSession(sessionFactory);
+		Criteria criteria = session.createCriteria(Student.class);
+		criteria.add(Restrictions.eq("email", email));
+		return (Student) criteria.uniqueResult();
+	}
+
+	@Override
+	public void updateStudentInfo(Student student) {
+		Session session = HibernateUtil.getSession(sessionFactory);
+		session.update(student);
+		
+	}
+
+	@Override
+	public void sendMail(SimpleMailMessage simpleMessage) {
+		mailSender.send(simpleMessage);
+		
 	}
 }
