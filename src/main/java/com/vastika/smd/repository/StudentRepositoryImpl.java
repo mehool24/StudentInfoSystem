@@ -63,7 +63,8 @@ public class StudentRepositoryImpl implements StudentRepository {
 	@Override
 	public void sendMail(SimpleMailMessage simpleMessage) {
 		mailSender.send(simpleMessage);
-    
+	}
+	
 	public void saveStudent(Student student) {
 		Session session = HibernateUtil.getSession(sessionFactory);
 		session.save(student);
