@@ -48,7 +48,9 @@ public class StudentServiceImpl implements StudentService {
 	@Override
 	public void sendMail(SimpleMailMessage simpleMessage) {
 		studentRepository.sendMail(simpleMessage);
-		
+    
+	public void saveStudent(Student student) {
+		studentRepository.saveStudent(student);		
 	}
 
 }

@@ -16,12 +16,16 @@ public class Course {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "course_id")
 	private int courseId;
+	
 	@Column(name = "course_name")
 	private String courseName;
+	
 	@Column(name = "course_grade")
 	private String courseGrade;
+	
 	@Column(name="course_credit")
 	private String courseCredit;
+	
 	@ManyToOne
 	@JoinColumn(name = "id", nullable = false)
 	private Student student;

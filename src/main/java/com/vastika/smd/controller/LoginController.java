@@ -33,7 +33,8 @@ public class LoginController {
 	public String login(@RequestParam("userName") String username, String password, HttpSession session, Model model) {
 		Student student = studentService.getStudentByUserNameAndpassword(username, password);
 		if (student != null) {
-			session.setAttribute("uname", username);
+			session.setAttribute("name", student.getFirstName() + " " + student.getLastName());
+			session.setAttribute("student", student);
 			return "redirect:/home";
 		}
 		model.addAttribute("msg", "Wrong username or password!!!");
@@ -45,7 +46,14 @@ public class LoginController {
 	public String getLoginForm(Model model, HttpSession session) {
 		session.invalidate();
 		model.addAttribute("msg", "You are successfully logged out!!!");
-		return "redirect:/home";
+		return "login";
+	}
+	
+	@GetMapping("/student_details")
+	public String getStudentDetails(Model model, HttpSession session) {
+		Student sessionStudent = (Student)session.getAttribute("student");
+		model.addAttribute("student", sessionStudent);
+		return "studentDetails";
 	}
 	
 	@RequestMapping(value = "/forgot_password")

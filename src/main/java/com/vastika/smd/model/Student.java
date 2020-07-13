@@ -33,8 +33,10 @@ public class Student {
 	private Date dob;
 	private int ssn;
 	private String gender;
+	
 	@OneToMany(mappedBy = "student")
 	private Set<Course> courses;
+	
 	@OneToOne(cascade = CascadeType.ALL)
 	private CollegeInfo collegeInfo;
 	private String email;
@@ -62,6 +64,9 @@ public class Student {
 	public void setCollegeInfo(CollegeInfo collegeInfo) {
 		this.collegeInfo = collegeInfo;
 	}
+	
+	@OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
+	private Address address;
 
 	public int getId() {
 		return id;
@@ -126,6 +131,13 @@ public class Student {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	
 
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	
 }

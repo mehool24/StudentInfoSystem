@@ -20,4 +20,6 @@ public interface StudentService {
 	
 	void sendMail(SimpleMailMessage simpleMessage);
 
+	void saveStudent(Student student);
+	
 }

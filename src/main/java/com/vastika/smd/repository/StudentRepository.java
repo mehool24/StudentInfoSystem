@@ -13,10 +13,12 @@ public interface StudentRepository {
 	Student getStudentByUserNameAndpassword(String username, String password);
 
 	void resetPassword(Student student);
-	
+
 	Student getStudentByEmail(String email);
 	
 	void updateStudentInfo(Student student);
 	
 	void sendMail(SimpleMailMessage simpleMessage);
+
+	void saveStudent(Student student);
 }
