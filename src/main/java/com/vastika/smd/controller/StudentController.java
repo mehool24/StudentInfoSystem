@@ -19,5 +19,10 @@ public class StudentController {
 		model.addAttribute("users",studentService .getAllStudentInfo());
 		return "studentList";
 	}
+	
+	@RequestMapping(value = "/add_student")
+	public String getAddStudentForm(Model model) {
+		return "addStudent";
+	}
 
 }
