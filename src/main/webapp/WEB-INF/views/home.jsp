@@ -12,8 +12,10 @@
 	<div class="jumbotron">
 	
 	<header>
-		<h1>Welcome to college information system home page</h1>
+		<h1>Welcome to Team1 Consulting</h1>
 	</header>
+	<hr class="my-4">
+	<p class="lead">Failure is a new success. Come join us.</p>
 	</div>
 </div>
 

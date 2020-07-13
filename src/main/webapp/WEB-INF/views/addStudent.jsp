@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Add Student</title>
-<%@ include file="header.jsp" %>
-</head>
-<body>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -17,12 +9,12 @@
 </head>
 <body>
 <div class="container" style="padding-top: 40px;">
-	<div class="jumbotron">
 	<header>
-		<h1>Add new student page</h1>
+		<h1 align="center">Add new student</h1>
+		<br>
 	</header>
-	</div>
 	<form action="save_student" method="post">
+		<div class="jumbotron">
 		<div class="form-group">
 			<div class="row">
 				<div class="col"><label>First Name</label></div>
@@ -50,9 +42,13 @@
 			<input type="text" name="ssn" class="form-control" value="" placeholder="Social security number">
 		</div>
 		<div class="form-group">
+			<label>Email</label>
+			<input type="text" name="email" class="form-control" value="" placeholder="Enter your email">
+		</div>
+		<div class="form-group">
 			<label>Gender</label><br>
-			Male  <input type="radio" name="gender" class="" value="male"> &nbsp; &nbsp;
-			Female  <input type="radio" name="gender" class="" value="female">
+			Male  <input type="radio" name="gender" class="" value="Male"> 
+			Female  <input type="radio" name="gender" class="" value="Female">
 		</div>
 		<hr>
 		<h3 class="margin-all-side">Student Address</h3>
@@ -90,7 +86,7 @@
 		<h3 class="margin-all-side">College Details</h3>
 		<div class="form-group margin-all-side">
 			<label>College Name</label>
-			<input type="text" name="college.collegeName" class="form-control" value="" placeholder="Enter college name">
+			<input type="text" name="collegeInfo.collegeName" class="form-control" value="" placeholder="Enter college name">
 		</div>
 		<hr>
 		<h3 class="margin-all-side margin-all-side">College Address</h3>
@@ -135,17 +131,22 @@
 				<div class="col"><label>Credit</label></div>
 			</div>
 			<div class="row">
-				<div class="col"><input type="text" name="courses.courseName" class="form-control" value="" placeholder="Enter course name"></div>
-				<div class="col"><input type="text" name="courses.courseGrade" class="form-control" value="" placeholder="Enter grade"></div>
-				<div class="col"><input type="text" name="courses.courseCredit" class="form-control" value="" placeholder="Enter credit"></div>
+				<div class="col"><input type="text" name="course.courseName" class="form-control" value="" placeholder="Enter course name"></div>
+				<div class="col"><input type="text" name="course.courseGrade" class="form-control" value="" placeholder="Enter grade"></div>
+				<div class="col"><input type="text" name="course.courseCredit" class="form-control" value="" placeholder="Enter credit"></div>
 			</div>
 			
 		</div>
+		</div>
 		<div class="form-group">
+			
+			<input type="button"  class="btn btn-danger btn-md" value="Cancel" onCLick="history.back()">
 			<button class="btn btn-success btn-md" type="submit">Save Student</button>
 		</div>
 	</form>
-	<input type=button value="Cancel" onCLick="history.back()">
+	<br>
+	<br>
+	<br>
 </div>
 </body>
 </html>

@@ -10,9 +10,10 @@
 
 </head>
 <body>
-<div class="container">
-<a href="add_student"><button class="btn btn-primary btn-sm margin-all-side">Add Student</button></a>
-	<div><h1>Student List</h1></div>
+<div class="container" style="padding-top: 40px">
+	
+	<div><h1 align="center">Student List</h1> <br></div>
+	<div class="jumbotron">
 	<c:if test="${!empty students }"></c:if>
 	<table class=" table table-striped">
 		<thead>
@@ -26,10 +27,7 @@
 				<th>Date Of Birth</th>
 				<th>Social Security</th>
 				<th>Gender</th>
-				<th>Student Address</th>
-				<th>College Name</th>
-				<th>College Address</th>
-				<th>Courses</th>
+				<th>Email</th>
 				<th>Action</th>
 				<th>				
 			</tr>
@@ -38,7 +36,7 @@
 			<c:forEach items="${students}" var="student" varStatus="i">
 				<tr>
 					<td>${i.count}</td>
-					<td>${student.id}</td>
+					<td><a href="student_detail?id=${student.id}"> ${student.id}</a></td>
 					<td>${student.firstName}</td>
 					<td>${student.lastName}</td>
 					<td>${student.userName}</td>
@@ -46,18 +44,16 @@
 					<td>${student.dob}</td>
 					<td>${student.ssn}</td>
 					<td>${student.gender}</td>
-					<td><c:if test="${!empty student.getAddress()}">${student.getAddress().getCityName()}, ${student.getAddress().getCountryName()}</c:if></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td><a href ="edit_user?=${student.id}">Edit</a> 
-					<a href ="delete_user?id=${student.id}">Delete</a></td>
+					<td>${student.email} </td>
+					<td><a href ="edit_student?id=${student.id}">Edit</a> |
+					<a href ="delete_student?id=${student.id}">Delete</a></td>
 					<td></td>
 				</tr>
 			</c:forEach>
 
 		</tbody>
 	</table>
+	</div>
 </div>
 </body>
 </html>

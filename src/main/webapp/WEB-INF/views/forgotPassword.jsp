@@ -27,7 +27,8 @@
 <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-	<div class="container">
+<div><%@ include file ="header.jsp" %>
+	<div class="container" style="padding-top: 180px;">
 		<div class="d-flex justify-content-center h-100">
 			<div class="card">
 				<div class="card-header">
@@ -65,10 +66,10 @@
 				
 						<div class="form-group" style="padding-top: 20px;">
 							<input type="submit" value="Update"
-								class="btn float-right login_btn">
+								class="btn float-right login_btn btn-warning">
 								
 								<a href="login" type="button"
-								class="btn float-left login_btn">Cancel</a>
+								class="btn float-left login_btn btn-danger">Cancel</a>
 						</div>
 					</form>
 				</div>
@@ -76,6 +77,6 @@
 			</div>
 		</div>
 	</div>
-
+</div>
 </body>
 </html>
