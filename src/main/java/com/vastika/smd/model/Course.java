@@ -7,11 +7,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "courses")
 public class Course {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "course_id")
@@ -26,21 +28,9 @@ public class Course {
 	@Column(name="course_credit")
 	private String courseCredit;
 	
-	@ManyToOne
-	@JoinColumn(name = "id", nullable = false)
+	@OneToOne
+	@JoinColumn(name = "id")
 	private Student student;
-	
-	public Course() {
-		
-	}
-	
-	public Course(int courseId, String courseName, String courseGrade, String courseCredit) {
-		super();
-		this.courseId = courseId;
-		this.courseName = courseName;
-		this.courseGrade = courseGrade;
-		this.courseCredit = courseCredit;
-	}
 	
 	public int getCourseId() {
 		return courseId;

@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -16,7 +17,8 @@ public class CollegeInfo {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	@Column(name = "college_id")
+	private int collegeId;
 	
 	@Column(name = "college_name")
 	private String collegeName;
@@ -25,20 +27,8 @@ public class CollegeInfo {
 	private Address address;
 	
 	@OneToOne
+	@JoinColumn(name = "id")
 	private Student student;
-	
-	public CollegeInfo() {
-		
-	}
-	
-	public CollegeInfo(int id, String collegeName, Address address, Student student) {
-		super();
-		this.id = id;
-		this.collegeName = collegeName;
-		this.address = address;
-		this.student = student;
-	}
-	
 	
 	public Student getStudent() {
 		return student;
@@ -47,13 +37,16 @@ public class CollegeInfo {
 	public void setStudent(Student student) {
 		this.student = student;
 	}
+	
+	
+	public int getCollegeId() {
+		return collegeId;
+	}
 
-	public int getId() {
-		return id;
+	public void setCollegeId(int collegeId) {
+		this.collegeId = collegeId;
 	}
-	public void setId(int id) {
-		this.id = id;
-	}
+
 	public String getCollegeName() {
 		return collegeName;
 	}
