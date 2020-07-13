@@ -30,8 +30,8 @@ public class LoginController {
 	}
 
 	@PostMapping("/student_login")
-	public String login(@RequestParam("userName") String username, String password, HttpSession session, Model model) {
-		Student student = studentService.getStudentByUserNameAndpassword(username, password);
+	public String login(@RequestParam String userName, @RequestParam String password, HttpSession session, Model model) {
+		Student student = studentService.getStudentByUserNameAndpassword(userName, password);
 		if (student != null) {
 			session.setAttribute("name", student.getFirstName() + " " + student.getLastName());
 			session.setAttribute("student", student);
