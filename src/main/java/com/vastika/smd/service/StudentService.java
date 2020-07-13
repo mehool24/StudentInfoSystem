@@ -22,4 +22,8 @@ public interface StudentService {
 
 	void saveStudent(Student student);
 	
+	Student getStudentById(int id);
+	
+	void deleteStudentInfo(int id);
+	
 }

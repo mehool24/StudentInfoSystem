@@ -70,4 +70,21 @@ public class StudentRepositoryImpl implements StudentRepository {
 		session.save(student);
 		
 	}
+
+	@Override
+	public Student getStudentById(int id) {
+		Session session = HibernateUtil.getSession(sessionFactory);
+		Criteria criteria = session.createCriteria(Student.class);
+		criteria.add(Restrictions.eq("id", id));
+		return (Student) criteria.uniqueResult();
+	}
+
+	@Override
+	public void deleteUserInfo(int id) {
+		Student student = getStudentById(id);
+		if(student != null) {
+			Session session =  HibernateUtil.getSession(sessionFactory);
+			session.delete(student);
+		}
+	}
 }
